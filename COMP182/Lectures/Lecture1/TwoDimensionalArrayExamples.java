@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class TwoDimentionalArrayExamples {
+public class TwoDimensionalArrayExamples {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
