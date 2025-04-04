@@ -1,25 +1,24 @@
 public class TestCircle {
   /** Main method */
   public static void main(String[] args) {
-    // Create a circle with radius 1
-    Circle circle1 = new Circle();
+      // Create a Circle with radius 5.0
+    MyCircle c1 = 
+      new MyCircle(5.0);
+      System.out.println(c1);
     System.out.println("The area of the circle of radius "
-      + circle1.radius + " is " + circle1.getArea());
+      + c1.getRadius() + " is " + c1.getArea());
 
-    // Create a circle with radius 25
-    Circle circle2 = new Circle(25);
+    // Increase myCircle's radius by 10%
+    c1.setRadius(c1.getRadius() * 1.1);
     System.out.println("The area of the circle of radius "
-      + circle2.radius + " is " + circle2.getArea());
+      + c1.getRadius() + " is " + c1.getArea());
+    
+    System.out.println("The number of objects created is "
+      + MyCircle.getNumberOfObjects());
+    MyCircle c2 = new MyCircle(5.0);
+    MyCircle c3 = new MyCircle(0.0);
+  System.out.println("The number of objects created is "
+      + MyCircle.getNumberOfObjects());
 
-    // Create a circle with radius 125
-    Circle circle3 = new Circle(125);
-    System.out.println("The area of the circle of radius "
-      + circle3.radius + " is " + circle3.getArea());
-
-    // Modify circle radius
-    circle2.radius = 100; // or circle2.setRadius(100)
-    System.out.println("The area of the circle of radius "
-      + circle2.radius + " is " + circle2.getArea());
   }
 }
-
