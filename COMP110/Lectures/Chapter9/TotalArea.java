@@ -6,11 +6,15 @@ public class TotalArea {
       for(int i=0; i<5; ++i){
          arrayCircle[i] = new Circle(rand.nextInt(20)+1);
       }
+      System.out.println("Total area is: "+sum(arrayCircle));
+   }
+      
+   public static double sum(Circle[] list) {
       double totalArea = 0;
-      for(int i=0; i<5;++i) {
-      totalArea = totalArea + arrayCircle[i].getArea();
-      System.out.println(arrayCircle[i].getRadius()+"  "+arrayCircle[i].getArea());
+      for(int i=0; i<list.length;++i) {
+         totalArea = totalArea + list[i].getArea();
+      
       }
-      System.out.println(totalArea);
+      return totalArea;
    }
 }
