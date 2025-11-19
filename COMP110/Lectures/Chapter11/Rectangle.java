@@ -1,52 +1,60 @@
+import java.util.*;
 public class Rectangle extends GeometricObject {
-  private double width;
-  private double height;
+    private double width;
+    private double height;
 
- public Rectangle() {
-  
-  }
+    public Rectangle() {
+        super();
+    }
 
-  public Rectangle(double width, double height) {
-    super();
-    this.width = width;
-    this.height = height;
-  }
+    public Rectangle(double width, double height) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
 
-  public Rectangle(double width, double height, String color, boolean filled) {
-    // super();
-    this.width = width;
-    this.height = height;
-    super.setColor(color);
-    super.setFilled(filled);
-  }
+    public Rectangle(double width, double height, String color, boolean filled) {
+        super();
+        this.width = width;
+        this.height = height;
+        super.setColor(color);
+        setFilled(filled);
+    }
 
-  /** Return width */
-  public double getWidth() {
-    return width;
-  }
+    /** Return width */
+    public double getWidth() {
+        return width;
+    }
 
-  /** Set a new width */
-  public void setWidth(double width) {
-    this.width = width;
-  }
+    /** Set a new width */
+    public void setWidth(double width) {
+        this.width = width;
+    }
 
-  /** Return height */
-  public double getHeight() {
-    return height;
-  }
+    /** Return height */
+    public double getHeight() {
+        return height;
+    }
 
-  /** Set a new height */
-  public void setHeight(double height) {
-    this.height = height;
-  }
+    /** Set a new height */
+    public void setHeight(double height) {
+        this.height = height;
+    }
 
-  /** Return area */
-  public double getArea() {
-    return width * height;
-  }
+    /** Return area */
+    public double getArea() {
+        return width * height;
+    }
 
-  /** Return perimeter */
-  public double getPerimeter() {
-    return 2 * (width + height);
-  }
+    /** Return perimeter */
+    public double getPerimeter() {
+        return 2 * (width + height);
+    }
+
+    @Override
+    public String toString(){
+        return "The rectangle is: " + super.toString()  +
+                " and the height is " + height + " and the width is " + width;
+    }
+
 }
