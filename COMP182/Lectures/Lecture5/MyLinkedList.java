@@ -1,4 +1,4 @@
-public class MyLinkedList<E> {
+public class MyLinkedList<E> implements MyList<E>{
     Node<E> head;
     Node<E> tail;
     int size;
@@ -14,6 +14,7 @@ public class MyLinkedList<E> {
         }
     }
 
+    /** Add a new element at the beginning of this list */
     public void addFirst(E e) {
         Node<E> newNode = new Node<>(e);
         newNode.next = head;
@@ -24,6 +25,7 @@ public class MyLinkedList<E> {
         }
     }
 
+    /** Add a new element at the end of this list */
     public void addLast(E e) {
         Node<E> newNode = new Node<>(e);
         if(tail == null) {
@@ -67,4 +69,44 @@ public class MyLinkedList<E> {
             System.out.print(curr.element+" ");
         }
     }
+
+    /** Remove the element at the specified position in this list
+     *  Shift any subsequent elements to the left.
+     *  Return the element that was removed from the list. */
+    public E remove(int index) {
+        return null;
+    }
+
+    /** Remove the element at the beginning of this this list
+     *  Return the element that was removed */
+    public E removeFirst() {
+        return null;
+    }
+
+    /** Remove the element at the end of this this list
+     *  Return the element that was removed */
+    public E removeLast() {
+        return null;
+    }
+
+    /** Add a new element at the specified position*/
+    public void add(int index, E e) {
+
+    }
+
+
+
+
+
+    /** Return true if this list contains no elements */
+    public  boolean isEmpty() {
+        return size == 0;
+    }
+
+
+    /** Return size of this list */
+    public int size() {
+        return size;
+    }
 }
+
