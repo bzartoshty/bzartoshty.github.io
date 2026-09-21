@@ -47,10 +47,24 @@ public class MyLinkedList<E> {
             return;
         }
         else {
-
-            printList(curr.next);
             System.out.print(curr.element+" ");
+            printList(curr.next);
+
         }
 
+    }
+
+    public void printListReverse(){
+        printListReverse(head);
+    }
+
+    private void printListReverse(Node<E> curr){
+        if(curr == null){
+            return;
+        }
+        else {
+            printListReverse(curr.next);
+            System.out.print(curr.element+" ");
+        }
     }
 }
