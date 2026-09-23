@@ -74,23 +74,88 @@ public class MyLinkedList<E> implements MyList<E>{
      *  Shift any subsequent elements to the left.
      *  Return the element that was removed from the list. */
     public E remove(int index) {
-        return null;
+        if(index < 0 || index >= size){
+            return null;
+        }
+        else if(index == 0){
+            return removeFirst();
+        }
+        else if(index == size-1){
+            return removeLast();
+        }
+        else {
+            Node<E> prev = head;
+            for(int i = 1; i < index; i++){
+                prev = prev.next;
+            }
+            Node<E> curr = prev.next;
+            prev.next = curr.next;
+            size--;
+            return curr.element;
+        }
     }
 
     /** Remove the element at the beginning of this this list
      *  Return the element that was removed */
     public E removeFirst() {
-        return null;
+        if(size == 0) {
+            return null;
+        }
+        else {
+            E ret = head.element;
+            head = head.next;
+            size--;
+            if (head == null) {
+                tail = null;
+            }
+            return ret;
+        }
     }
 
     /** Remove the element at the end of this this list
      *  Return the element that was removed */
-    public E removeLast() {
-        return null;
-    }
+
 
     /** Add a new element at the specified position*/
     public void add(int index, E e) {
+        if(index == 0){
+            addFirst(e);
+        }
+        else if(index == size){
+            addLast(e);
+        }
+        else {
+            Node<E> curr = head;
+            for(int i = 1; i < index; i++){
+                curr = curr.next;
+            }
+            Node<E> newNode = new Node<>(e);
+            Node<E> temp = curr.next;
+            curr.next = newNode;
+            newNode.next = temp;
+            size++;
+        }
+
+    }
+
+    public E removeLast(){
+        if(size == 0) {
+            return null;
+        }
+        else if(size==1){
+            return removeFirst();
+        }
+        else {
+            Node<E> temp = head;
+            while(temp.next != tail){
+                temp = temp.next;
+            }
+            E ret = tail.element;
+            tail = temp;
+            tail.next = null;
+            size--;
+            return ret;
+        }
 
     }
 
@@ -108,5 +173,9 @@ public class MyLinkedList<E> implements MyList<E>{
     public int size() {
         return size;
     }
+
+
+
+
 }
 
