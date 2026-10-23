@@ -1,0 +1,51 @@
+/* Shared course styling. No JavaScript or external framework required. */
+:root { color-scheme: light; font-family: Arial, Helvetica, sans-serif; color: #202830; background: #fff; line-height: 1.55; }
+body { max-width: 1180px; margin: 0 auto; padding: 2rem; }
+a { color: #075493; text-underline-offset: .15em; }
+a:hover { color: #00355f; }
+a:focus-visible, [tabindex]:focus-visible { outline: 3px solid #cc7000; outline-offset: 4px; }
+header { border-bottom: 2px solid #dbe2e8; padding-bottom: 1rem; margin-bottom: 2rem; }
+h1 { font-size: 2.2rem; line-height: 1.2; margin: 1rem 0 .4rem; }
+h2 { font-size: 1.5rem; line-height: 1.3; margin-top: 2rem; }
+h3 { font-size: 1.15rem; }
+.subtitle { font-size: 1.2rem; margin: 0; }
+section { margin-bottom: 2rem; scroll-margin-top: 1rem; }
+li { margin: .3rem 0; }
+.resources { columns: 2; column-gap: 3rem; padding-left: 1.25rem; }
+.resources li { break-inside: avoid; }
+.table-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+caption { text-align: left; margin-bottom: .7rem; font-weight: bold; }
+th, td { border: 1px solid #bac5ce; padding: .8rem; vertical-align: top; }
+thead th { background: #edf2f6; }
+tbody th { width: 4rem; text-align: center; }
+tbody tr:nth-child(even) { background: #f8fafb; }
+.downloads { min-width: 7rem; }
+.downloads a { display: block; margin-bottom: .35rem; }
+.examples { margin: 0; padding-left: 1.1rem; overflow-wrap: anywhere; }
+.examples a { font-family: Consolas, monospace; font-size: .9rem; }
+img { max-width: 100%; height: auto; }
+pre { overflow-x: auto; padding: 1rem; background: #f3f5f7; border-left: 3px solid #bac5ce; }
+.skip-link { position: absolute; left: -10000px; }
+.skip-link:focus { position: static; display: block; padding: .5rem; }
+@media (max-width: 650px) {
+  body { padding: 1rem; }
+  .resources { columns: 1; }
+  th, td { padding: .5rem; }
+  table { min-width: 620px; }
+}
+@media print {
+  body { max-width: none; padding: 0; font-size: 10pt; color: #000; }
+  header nav, .skip-link { display: none; }
+  header { margin-bottom: 1rem; }
+  section { margin-bottom: 1rem; }
+  h2 { margin-top: 1.2rem; break-after: avoid; }
+  a { color: #000; }
+  .resources { columns: 1; }
+  .table-scroll, pre { overflow: visible; }
+  table { min-width: 0; font-size: 8pt; }
+  th, td { padding: .35rem; }
+  thead { display: table-header-group; }
+  tr, img { break-inside: avoid; }
+  pre { white-space: pre-wrap; }
+}

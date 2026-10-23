@@ -1,0 +1,5 @@
+# Generated Java and operating-system files
+*.class
+.DS_Store
+Thumbs.db
+~$*
