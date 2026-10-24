@@ -1,27 +1,24 @@
-import java.util.Scanner; 
+import java.util.Scanner;
 
+/**
+ * COMP 110 - Chapter 5: Loops
+ * Slides 47
+ * Assumptions: Integer guesses are supplied until target is found; target 0-100 inclusive.
+ */
 public class GuessNumber {
-   public static void main(String[] args) {
-      // Generate a random number to be guessed
-      int number = (int)(Math.random() * 101);
-   
-      Scanner input = new Scanner(System.in);
-      System.out.println("Guess a magic number between 0 and 100");
-   
-      int guess = input.nextInt();
-   
-      while (guess != number) {
-         // Prompt the user to guess the number
-         
-         if (guess > number)
-            System.out.println("Your guess is too high");
-         else
-            System.out.println("Your guess is too low");
-         System.out.print("\nEnter your guess: ");
-         guess = input.nextInt();
-      
-      } // End of loop
-               System.out.println("Yes, the number is " + number);
-      
-   }
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int target = (int) (Math.random() * 101);
+        int attempts = 0;
+        int guess;
+        do {
+            System.out.println("Guess 0-100:");
+            guess = input.nextInt();
+            attempts++;
+            if (guess < target) System.out.println("Too low");
+            else if (guess > target) System.out.println("Too high");
+        } while (guess != target);
+        System.out.println("Correct: " + target);
+        System.out.println("Attempts: " + attempts);
+    }
 }

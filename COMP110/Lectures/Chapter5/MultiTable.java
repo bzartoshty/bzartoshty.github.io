@@ -1,19 +1,14 @@
-public class MuliTable {
-   public static void main(String[] args) {
-      System.out.println("             Multiplication Table");
-      System.out.print("    ");
-      for(int i=1;i<=9;++i){
-         System.out.print(i+"    ");
-      }
-      System.out.println();
-      System.out.println("  --------------------------------------------");
-      for(int row=1;row<=9;++row) {
-         System.out.print(row+" |");
-         for(int col=1;col<=9;++col){
-            System.out.printf("%2d   ",row*col);
-         }
-         System.out.println();
-      }
-      
-   }
+/**
+ * COMP 110 - Chapter 5: Loops
+ * Slides 34
+ */
+public class MultiTable {
+    public static void main(String[] args) {
+        for (int row = 1; row <= 9; row++) {
+            for (int column = 1; column <= 9; column++) {
+                System.out.printf("%4d", row * column);
+            }
+            System.out.println();
+        }
+    }
 }
