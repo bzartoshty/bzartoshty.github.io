@@ -1,26 +1,33 @@
+import java.util.Scanner;
+
+/**
+ * COMP 110 - Chapter 7: Arrays
+ * Slides 19, 20
+ * Assumptions: Five finite numeric inputs. average requires a non-null, nonempty array and finite total.
+ */
 public class AnalyzeNumbers {
-   public static void main(String[] args) {
-      java.util.Scanner input = new java.util.Scanner(System.in);
-    //  System.out.print("Enter the number of items: ");
-      int n = input.nextInt(); 
-      double[] numbers = new double[n]; // Create an array
-      double sum = 0;
-   
-   //   System.out.print("Enter the numbers: ");
-      for (int i = 0; i < numbers.length; i++) {
-         numbers[i] = input.nextDouble();
-         sum += numbers[i];
-      }
-      
-      double average = sum / n;
-   
-      int count = 0; // The numbers of elements above average
-      for (int i = 0; i < numbers.length; i++) {
-         if (numbers[i] > average) // Count if number[i] > average
-            count++;
-      }
-      System.out.println("Average is " + average);
-      System.out.println("Number of elements above the average is "
-         + count);
-   }
+    static double average(double[] values) {
+        double total = 0;
+        for (double value : values) total += value;
+        return total / values.length;
+    }
+
+    static int countAbove(double[] values, double mean) {
+        int count = 0;
+        for (double value : values) {
+            if (value > mean) count++;
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double[] values = new double[5];
+        for (int i = 0; i < values.length; i++) {
+            values[i] = input.nextDouble();
+        }
+        double mean = average(values);
+        System.out.println("Average: " + mean);
+        System.out.println("Above: " + countAbove(values, mean));
+    }
 }

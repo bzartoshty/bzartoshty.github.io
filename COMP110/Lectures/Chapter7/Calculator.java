@@ -1,40 +1,32 @@
+/**
+ * COMP 110 - Chapter 7: Arrays
+ * Slides 58, 59
+ * Assumptions: Arithmetic results must fit in int. Division uses integer arithmetic.
+ */
 public class Calculator {
-  /** Main method */
-  public static void main(String[] args) {
-    // Check number of strings passed
-    if (args.length != 3) {
-      System.out.println(
-        "Usage: java Calculator operand1 operator operand2");
-      System.exit(1);
+    static int calculate(int a, String op, int b) {
+        switch (op) {
+            case "+": return a + b;
+            case "-": return a - b;
+            case "*": return a * b;
+            case "/": return a / b;
+            default:
+                throw new IllegalArgumentException(
+                    "Unknown operator");
+        }
     }
 
-    // The result of the operation
-    int result = 0;
-
-    // Determine the operator
-    switch (args[1]) { 
-      case "+": result = Integer.parseInt(args[0]) + 
-                         Integer.parseInt(args[2]);
-                break;
-      case "-": result = Integer.parseInt(args[0]) -
-                         Integer.parseInt(args[2]);
-                break;
-      case ".": result = Integer.parseInt(args[0]) *
-                         Integer.parseInt(args[2]);
-                break;
-      case "/": result = Integer.parseInt(args[0]) /
-                         Integer.parseInt(args[2]);
-                 break;
-        case "%": result = Integer.parseInt(args[0]) %
-                         Integer.parseInt(args[2]);
-                 break;
-
-       default: System.out.println("Illegal Operator");
-                System.exit(2);
+    public static void main(String[] args) {
+        if (args.length != 3) {
+            System.out.println("Usage: java Calculator 2 + 3");
+            return;
+        }
+        try {
+            int left = Integer.parseInt(args[0]);
+            int right = Integer.parseInt(args[2]);
+            System.out.println(calculate(left, args[1], right));
+        } catch (IllegalArgumentException | ArithmeticException ex) {
+            System.out.println("Error: " + ex.getMessage());
+        }
     }
-
-    // Display result
-    System.out.println(args[0] + ' ' + args[1] + ' ' + args[2]
-      + " = " + result);
-  }
 }
