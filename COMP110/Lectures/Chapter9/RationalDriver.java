@@ -1,19 +1,16 @@
-import java.util.*;
+/**
+ * COMP 110 - Chapter 9: Objects and Classes
+ * Slides 59
+ */
 public class RationalDriver {
-   public static void main(String[] args){
-  
-      Scanner in = new Scanner(System.in);
-      int n = in.nextInt();
-      Rational sum = new Rational();
-      for(int i=1;i<=n;++i){
-         Rational r = new Rational(1,i);
-         if(i!=n)
-            System.out.print(r+" + ");
-         else
-            System.out.print(r);
-         sum = sum.add(r);
-      }
-      System.out.println(" = "+sum);
-   
-   }
+    public static void main(String[] args) {
+        Rational first = new Rational(1, 2);
+        Rational second = new Rational(1, 3);
+        System.out.println(first.add(second));
+        System.out.println(first.subtract(second));
+        System.out.println(first.multiply(second));
+        System.out.println(first.divide(second));
+        System.out.println(first);
+        System.out.println(first.equals(new Rational(2, 4)));
+    }
 }

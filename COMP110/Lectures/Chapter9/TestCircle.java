@@ -1,24 +1,16 @@
+/**
+ * COMP 110 - Chapter 9: Objects and Classes
+ * Slides 11
+ * Assumptions: Compile with Circle.java.
+ */
 public class TestCircle {
-  /** Main method */
-  public static void main(String[] args) {
-      // Create a Circle with radius 5.0
-    MyCircle c1 = 
-      new MyCircle(5.0);
-      System.out.println(c1);
-    System.out.println("The area of the circle of radius "
-      + c1.getRadius() + " is " + c1.getArea());
-
-    // Increase myCircle's radius by 10%
-    c1.setRadius(c1.getRadius() * 1.1);
-    System.out.println("The area of the circle of radius "
-      + c1.getRadius() + " is " + c1.getArea());
-    
-    System.out.println("The number of objects created is "
-      + MyCircle.getNumberOfObjects());
-    MyCircle c2 = new MyCircle(5.0);
-    MyCircle c3 = new MyCircle(0.0);
-  System.out.println("The number of objects created is "
-      + MyCircle.getNumberOfObjects());
-
-  }
+    public static void main(String[] args) {
+        Circle circle = new Circle(2.0);
+        System.out.println(circle.getRadius());
+        System.out.printf(java.util.Locale.US,
+            "Area: %.2f%n", circle.getArea());
+        circle.setRadius(3.0);
+        System.out.println(circle.getRadius());
+        // circle.radius = -1; // Private field: does not compile.
+    }
 }

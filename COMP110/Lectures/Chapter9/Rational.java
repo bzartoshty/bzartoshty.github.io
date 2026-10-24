@@ -1,104 +1,90 @@
-public class Rational   {
-   // Data fields for numerator and denominator
-   private int numerator = 0;
-   private int denominator = 1;
+/**
+ * COMP 110 - Chapter 9: Objects and Classes
+ * Slides 50, 51, 52, 53, 54, 55, 56, 57, 58
+ * Assumptions: Objects are immutable. Denominator is positive. The reduced numerator and denominator fit in int. Arithmetic uses long intermediates and rejects unrepresentable reduced results. Object arguments are non-null.
+ */
+public final class Rational {
+    private final int numerator;
+    private final int denominator;
 
-   /** Construct a rational with default properties */
-   public Rational() {
-      this(0, 1);
-   }
+    public Rational() {
+        this(0, 1);
+    }
 
-   /** Construct a rational with specified numerator and denominator */
-   public Rational(int numerator, int denominator) {
-      int gcd = gcd(numerator, denominator);
-      this.numerator = ((denominator > 0) ? 1 : -1) * numerator / gcd;
-      this.denominator = Math.abs(denominator) / gcd;
-   }
+    public Rational(int numerator, int denominator) {
+        this((long) numerator, (long) denominator);
+    }
 
-   /** Find GCD of two numbers */
-   private static int gcd(int n, int d) {
-      int n1 = Math.abs(n);
-      int n2 = Math.abs(d);
-      int gcd = 1;
-      
-      for (int k = 1; k <= n1 && k <= n2; k++) {
-         if (n1 % k == 0 && n2 % k == 0) 
-            gcd = k;
-      }
-   
-      return gcd;
-   }
+    private Rational(long n, long d) {
+        if (d == 0) {
+            throw new IllegalArgumentException("Zero denominator");
+        }
+        if (d < 0) { n = -n; d = -d; }
+        long divisor = gcd(Math.abs(n), d);
+        this.numerator = Math.toIntExact(n / divisor);
+        this.denominator = Math.toIntExact(d / divisor);
+    }
 
-   /** Return numerator */
-   public int getNumerator() {
-      return numerator;
-   }
-   
-   /** Set numerator */
-   public void setNumerator(int n)
-   {
-      numerator = n;
-   }
+    private static long gcd(long a, long b) {
+        while (b != 0) {
+            long remainder = a % b;
+            a = b;
+            b = remainder;
+        }
+        return a;
+    }
 
-   /** Return denominator */
-   public int getDenominator() {
-      return denominator;
-   }
-   
-   /** Set denominator */
-   public void setDenominator(int d)
-   {
-      denominator = d;
-   }
+    public int getNumerator() { return numerator; }
+    public int getDenominator() { return denominator; }
 
-   /** Add a rational number to this rational */
-   public Rational add(Rational r) {
-      int n = this.numerator * r.getDenominator() +
-         this.denominator * r.getNumerator();
-      int d = this.denominator * r.getDenominator();
-      return new Rational(n, d);
-   }
+    @Override
+    public String toString() {
+        return numerator + "/" + denominator;
+    }
 
-   /** Subtract a rational number from this rational */
-   public Rational subtract(Rational r) {
-      int n = numerator * r.getDenominator()
-         - denominator * r.getNumerator();
-      int d = denominator * r.getDenominator();
-      return new Rational(n, d);
-   }
+    public Rational add(Rational other) {
+        long n = (long) numerator * other.denominator
+               + (long) other.numerator * denominator;
+        long d = (long) denominator * other.denominator;
+        return new Rational(n, d);
+    }
 
-   /** Multiply a rational number to this rational */
-   public Rational multiply(Rational r) {
-      int n = this.numerator * r.getNumerator();
-      int d = this.denominator * r.getDenominator();
-      return new Rational(n, d);
-   }
+    public Rational subtract(Rational other) {
+        long n = (long) numerator * other.denominator
+               - (long) other.numerator * denominator;
+        long d = (long) denominator * other.denominator;
+        return new Rational(n, d);
+    }
 
-   /** Divide a rational number from this rational */
-   public Rational divide(Rational r) {
-      int n = numerator * r.getDenominator();
-      int d = denominator * r.numerator;
-      return new Rational(n, d);
-   }
+    public Rational multiply(Rational other) {
+        return new Rational((long) numerator * other.numerator,
+            (long) denominator * other.denominator);
+    }
 
-  
-   public String toString() {
-      if (denominator == 1)
-         return numerator + "/1";
-      else
-         return numerator + "/" + denominator;
-   }
+    public Rational divide(Rational other) {
+        if (other.numerator == 0) {
+            throw new ArithmeticException("Division by zero");
+        }
+        return new Rational((long) numerator * other.denominator,
+            (long) denominator * other.numerator);
+    }
 
+    public int compareTo(Rational other) {
+        long left = (long) numerator * other.denominator;
+        long right = (long) other.numerator * denominator;
+        return Long.compare(left, right);
+    }
 
-   public boolean equals(Rational r) {
-      return this.numerator*r.denominator == this.denominator * r.numerator;
-   }
+    @Override
+    public boolean equals(Object object) {
+        if (!(object instanceof Rational)) return false;
+        Rational other = (Rational) object;
+        return numerator == other.numerator
+            && denominator == other.denominator;
+    }
 
-   
-
-  
-   public int compareTo(Rational r) {
-      return this.numerator*r.denominator - this.denominator * r.numerator;
-   
-   }
+    @Override
+    public int hashCode() {
+        return 31 * numerator + denominator;
+    }
 }

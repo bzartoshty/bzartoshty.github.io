@@ -1,19 +1,13 @@
-/* Write a program to generate 5 random Rectangles
-   length: 10-50
-   width: 10-20
-   calculate and print sum of their areas
-*/
-import java.util.*;
+/**
+ * COMP 110 - Chapter 9: Objects and Classes
+ * Slides 29
+ */
 public class TestRectangle {
- public static void main(String[] args) {
-  Random rand = new Random();
-  double sum = 0.0;
-  for(int i=1;i<=5;++i){
-    int l = rand.nextInt(41)+10;
-    int w = rand.nextInt(11)+10;
-    Rectangle r = new Rectangle(l,w);
-    sum = sum + r.getArea();
-   }
-   System.out.println(sum);
-   }
- }
+    public static void main(String[] args) {
+        Rectangle rectangle = new Rectangle(3, 4);
+        System.out.println(rectangle.getArea());
+        System.out.println(rectangle.getPerimeter());
+        rectangle.setWidth(5);
+        System.out.println(rectangle.getArea());
+    }
+}

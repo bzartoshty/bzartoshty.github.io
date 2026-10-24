@@ -1,33 +1,46 @@
-// Define the circle class with two constructors
-class Circle {
- private  double radius;
+/**
+ * COMP 110 - Chapter 9: Objects and Classes
+ * Slides 6, 7, 8, 9, 10, 31
+ * Assumptions: Radius is finite and nonnegative. Area/perimeter must be representable for meaningful finite results. Count tracks successful constructions, not live objects.
+ */
+public class Circle {
+    private double radius;
+    private static int createdCount;
 
-  /** Construct a circle with radius 1 */
-  Circle() {
-    radius = 1;
-  }
+    public Circle() {
+        this(1.0);
+    }
 
-  /** Construct a circle with a specified radius */
-  Circle(double newRadius) {
-    radius = newRadius;
-  }
+    public Circle(double radius) {
+        validateRadius(radius);
+        this.radius = radius;
+        createdCount++;
+    }
 
-  /** Return the area of this circle */
-  double getArea() {
-    return radius * radius * Math.PI;
-  }
+    public double getRadius() {
+        return radius;
+    }
 
-  /** Return the perimeter of this circle */
-  double getPerimeter() {
-    return 2 * radius * Math.PI;
-  }
+    public void setRadius(double radius) {
+        validateRadius(radius);
+        this.radius = radius;
+    }
 
-  /** Set a new radius for this circle */
-  void setRadius(double newRadius) {
-    radius = newRadius;
-  }
-  
-  double getRadius() {
-   return radius;
-  }
+    private static void validateRadius(double radius) {
+        if (!Double.isFinite(radius) || radius < 0) {
+            throw new IllegalArgumentException("Invalid radius");
+        }
+    }
+
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+
+    public double getPerimeter() {
+        return 2 * Math.PI * radius;
+    }
+
+    public static int getCreatedCount() {
+        return createdCount;
+    }
 }
