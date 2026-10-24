@@ -1,31 +1,27 @@
-import java.util.Scanner; 
+import java.util.Scanner;
 
+/**
+ * COMP 110 - Chapter 3: Selections
+ * Slides 30
+ * Minimum Java version for this source: 8
+ * Assumptions: Reads an integer answer; generated operands are reordered so first >= second.
+ */
 public class SubtractionQuiz {
-  public static void main(String[] args) {
-    // 1. Generate two random single-digit integers
-    int number1 = (int)(Math.random() * 10);
-    int number2 = (int)(Math.random() * 10);
-
-    // 2. If number1 < number2, swap number1 with number2
-    if (number1 < number2) {
-      int temp = number1;
-      number1 = number2;
-      number2 = temp;
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int first = (int) (Math.random() * 10);
+        int second = (int) (Math.random() * 10);
+        if (first < second) {
+            int temporary = first;
+            first = second;
+            second = temporary;
+        }
+        System.out.println("What is " + first + " - " + second + "?");
+        int answer = input.nextInt();
+        if (answer == first - second) {
+            System.out.println("Correct");
+        } else {
+            System.out.println("Correct answer: " + (first - second));
+        }
     }
-
-    // 3. Prompt the student to answer "what is number1 – number2?"
-    System.out.print
-      ("What is " + number1 + " - " + number2 + "? ");
-    Scanner input = new Scanner(System.in);
-    int answer = input.nextInt();
-
-    // 4. Grade the answer and display the result
-    if (number1 - number2 == answer)
-      System.out.println("You are correct!");
-    else {
-      System.out.println("Your answer is wrong.");
-      System.out.println(number1 + " - " + number2 + 
-        " should be " + (number1 - number2)); 
-    }
-  }
 }

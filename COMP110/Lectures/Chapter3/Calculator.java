@@ -1,40 +1,29 @@
 import java.util.Scanner;
+import java.util.Locale;
+
+/**
+ * COMP 110 - Chapter 3: Selections
+ * Slides 71
+ * Minimum Java version for this source: 14
+ * Assumptions: Finite numeric operands of ordinary magnitude; operator is a token +, -, *, or /.
+ */
 public class Calculator {
-   public static void main(String[] args) {
-      Scanner input = new Scanner(System.in);
-      System.out.print("Enter two integer values: ");
-      int n1 = input.nextInt();
-      int n2 = input.nextInt();
-      System.out.print("Enter an operator (*,/,%,+,-): ");
-      String op = input.next();
-      int result = 
-         switch(op) {
-            case "*" -> {
-               yield n1 * n2;
-            }
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        input.useLocale(Locale.US);
+        System.out.print("Enter left operator right: ");
+        double left = input.nextDouble();
+        String operator = input.next();
+        double right = input.nextDouble();
+        switch (operator) {
+            case "+" -> System.out.println(left + right);
+            case "-" -> System.out.println(left - right);
+            case "*" -> System.out.println(left * right);
             case "/" -> {
-               yield n1 / n2;
+                if (right == 0) System.out.println("Zero divisor");
+                else System.out.println(left / right);
             }
-            case "%" -> {
-               yield n1 % n2;
-            }
-            case "+" -> {
-               yield n1 + n2;
-            }
-            case "-" ->
-            {
-               yield n1 - n2;
-            }
-            default -> {
-               System.out.println("Illegal operator");
-              
-               System.exit(1);
-                yield 0;
-            }
-         };
-      System.out.println(n1+ " "+op+" "+n2+" = "+result);
-   }
+            default -> System.out.println("Unknown operator");
+        }
+    }
 }
-    
-    
-    
