@@ -1,40 +1,21 @@
+/**
+ * COMP 110 - Chapter 10: Thinking in Objects
+ * Slides 17
+ * Assumptions: Name text is non-null and nonblank. Instances are immutable.
+ */
+public final class Name {
+    private final String name;
 
-public class Name {
-	String firstName;
-    String lastName;
-    
-    public Name() {
-    	
+    public Name() { this("Unknown"); }
+
+    public Name(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Missing name");
+        }
+        this.name = name.trim();
     }
-    
-    public Name(String firstName, String lastName) {
-    	this.firstName = firstName;
-    	this.lastName = lastName;
-    }
-    
-    public String getFirstName()
-    {
-        return firstName;
-    }
-    
-    public String getLastName()
-    {
-        return lastName;
-    }
-    
-    public void setFirstName(String fname)
-    {
-        firstName = fname;
-    }
-    
-    public void setLastName(String lname)
-    {
-        lastName = lname;
-    }
-    
-    public String getFullName()
-    {
-        return firstName + " " + lastName;
-    }
-    
+
+    public String getName() { return name; }
+    @Override
+    public String toString() { return name; }
 }

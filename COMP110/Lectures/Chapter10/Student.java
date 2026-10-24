@@ -1,37 +1,39 @@
-import java.util.Arrays;
+import java.util.Objects;
 
+/**
+ * COMP 110 - Chapter 10: Thinking in Objects
+ * Slides 20, 21, 22
+ * Assumptions: ID is non-null, nonblank, and immutable. Name and Address are non-null immutable values. Student name/address references can be replaced.
+ */
 public class Student {
-	
-	private Name student;
-	private Address[] address;
-	
-	public Student() {
-		student = null;
-		address = new Address[3];
-	}
-	public Student(Name student, Address[] address) {
-		
-		this.student = student;
-		this.address = address;
-	}
-	public Name getStudent() {
-		return student;
-	}
-	public void setStudent(Name student) {
-		this.student = student;
-	}
-	public Address[] getAddress() {
-		return address;
-	}
-	public void setAddress(Address[] address) {
-		this.address = address;
-	}
-	
-	
-	@Override
-	public String toString() {
-		return "Student [student=" + student + ", address=" + Arrays.toString(address) + "]";
-	}
-	
-	
+    private final String studentID;
+    private Name name;
+    private Address address;
+
+    public Student() {
+        this(new Name(), "UNASSIGNED", new Address());
+    }
+
+    public Student(Name name, String studentID, Address address) {
+        if (studentID == null || studentID.trim().isEmpty()) {
+            throw new IllegalArgumentException("Missing ID");
+        }
+        this.name = Objects.requireNonNull(name);
+        this.address = Objects.requireNonNull(address);
+        this.studentID = studentID.trim();
+    }
+
+    public String getStudentID() { return studentID; }
+    public Name getName() { return name; }
+    public Address getAddress() { return address; }
+
+    public void setName(Name name) {
+        this.name = Objects.requireNonNull(name);
+    }
+
+    public void setAddress(Address address) {
+        this.address = Objects.requireNonNull(address);
+    }
+    @Override
+    public String toString() { return studentID + ": " + name; }
 }

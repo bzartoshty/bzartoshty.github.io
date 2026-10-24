@@ -1,53 +1,40 @@
+/**
+ * COMP 110 - Chapter 10: Thinking in Objects
+ * Slides 18, 19
+ * Assumptions: All text fields are non-null and nonblank. This example stores a zip code as text without enforcing a postal format.
+ */
+public final class Address {
+    private final String street;
+    private final String city;
+    private final String state;
+    private final String zipCode;
 
-public class Address {
- private String street;
- private String city;
- private String state;
- private String zipCode;
- 
-public Address(String street, String city, String state, String zipCode) {
-	
-	this.street = street;
-	this.city = city;
-	this.state = state;
-	this.zipCode = zipCode;
-}
+    public Address() {
+        this("Unknown", "Unknown", "Unknown", "00000");
+    }
 
-public String getStreet() {
-	return street;
-}
+    public Address(String street, String city,
+                   String state, String zipCode) {
+        this.street = required(street);
+        this.city = required(city);
+        this.state = required(state);
+        this.zipCode = required(zipCode);
+    }
 
-public void setStreet(String street) {
-	this.street = street;
-}
+    public String getStreet() { return street; }
+    public String getCity() { return city; }
+    public String getState() { return state; }
+    public String getZipCode() { return zipCode; }
 
-public String getCity() {
-	return city;
-}
+    @Override
+    public String toString() {
+        return street + ", " + city + ", " + state + " " + zipCode;
+    }
 
-public void setCity(String city) {
-	this.city = city;
-}
-
-public String getState() {
-	return state;
-}
-
-public void setState(String state) {
-	this.state = state;
-}
-
-public String getZipCode() {
-	return zipCode;
-}
-
-public void setZipCode(String zipCode) {
-	this.zipCode = zipCode;
-}
-
-@Override
-public String toString() {
-	return "Address [street=" + street + ", city=" + city + ", state=" + state + ", zipCode=" + zipCode + "]";
-}
- 
+    private static String required(String text) {
+        if (text == null || text.trim().isEmpty()) {
+            throw new IllegalArgumentException("Missing address field");
+        }
+        return text.trim();
+    }
 }
