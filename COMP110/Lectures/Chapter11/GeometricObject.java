@@ -1,57 +1,30 @@
-import java.util.*;
-public abstract class GeometricObject {
-    private String color = "white";
-    private boolean filled; // default is false
-    private java.util.Date dateCreated;
+import java.time.Instant;
+import java.util.Objects;
 
-    /** Construct a default geometric object */
-    public GeometricObject() {
-        dateCreated = new java.util.Date();
-    }
+/**
+ * COMP 110 - Chapter 11: Inheritance and Polymorphism
+ * Slides 5, 6
+ * Assumptions: Color is non-null; creation Instant is immutable and reflects construction time.
+ */
+public class GeometricObject {
+    private String color;
+    private boolean filled;
+    private final Instant dateCreated = Instant.now();
 
-    /** Construct a geometric object with the specified color
-     *  and filled value */
+    public GeometricObject() { this("white", false); }
     public GeometricObject(String color, boolean filled) {
-        dateCreated = new java.util.Date();
-        this.color = color;
+        this.color = Objects.requireNonNull(color, "color");
         this.filled = filled;
     }
-    public String getColor() {
-        return color;
-    }
 
+    public String getColor() { return color; }
     public void setColor(String color) {
-        this.color = color;
+        this.color = Objects.requireNonNull(color, "color");
     }
-
-
-
-    /** Return filled. Since filled is boolean,
-     its get method is named isFilled */
-    public boolean isFilled() {
-        return filled;
+    public boolean isFilled() { return filled; }
+    public void setFilled(boolean filled) { this.filled = filled; }
+    public Instant getDateCreated() { return dateCreated; }
+    @Override public String toString() {
+        return "color=" + color + ",filled=" + filled;
     }
-
-    /** Set a new filled */
-    public void setFilled(boolean filled) {
-        this.filled = filled;
-    }
-
-    /** Get dateCreated */
-    public java.util.Date getDateCreated() {
-        return dateCreated;
-    }
-
-    /** Return a string representation of this object */
-    public String toString() {
-        return "created on " + dateCreated + "\ncolor: " + color +
-                " and filled: " + filled;
-    }
-
-    public abstract double getArea();
-
-    public abstract double getPerimeter();
-
-
-
 }

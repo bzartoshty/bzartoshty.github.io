@@ -1,38 +1,11 @@
+/**
+ * COMP 110 - Chapter 11: Inheritance and Polymorphism
+ * Slides 30
+ */
 public class DynamicBindingDemo {
-   public static void main(String[] args) {
-      m(new GraduateStudent());
-      m(new Student());
-      m(new Person());
-      m(new Object());
-      
-   }
-
-   public static void m(Object x) {
-      
-      System.out.println(x.toString());
-     
-   }
-}
-
-class GraduateStudent extends Student {
-
-}
-
-class Student extends Person {
-   @Override 
-   public String toString() {
-      return "Student";
-   }
-   
-}
-
-class Person  {
-   @Override 
-   public String toString() {
-      return "Person";
-   }
- 
-   
-   
-         
+    public static void main(String[] args) {
+        new Person("Ada").printPerson();
+        new Student("Bo").printPerson();
+        new GraduateStudent("Cy").printPerson();
+    }
 }

@@ -1,61 +1,31 @@
-import java.util.*;
+/**
+ * COMP 110 - Chapter 11: Inheritance and Polymorphism
+ * Slides 7, 8, 17
+ * Assumptions: Finite nonnegative radius; use ordinary magnitudes for finite computed areas.
+ */
 public class Circle extends GeometricObject {
     private double radius;
-
-    public Circle() {
-        //super();
+    public Circle() { this(1); }
+    public Circle(double radius) { this(radius, "white", false); }
+    public Circle(double radius, String color, boolean filled) {
+        super(color, filled);
+        setRadius(radius);
     }
 
-    public Circle(double radius) {
-        super();
-        this.radius = radius;
-    }
-
-    public Circle(double radius,String color, boolean filled) {
-        super(color,filled);
-        this.radius = radius;
-
-    }
-
-    /** Return radius */
-    public double getRadius() {
-        return radius;
-    }
-
-    /** Set a new radius */
+    public double getRadius() { return radius; }
     public void setRadius(double radius) {
+        if (!Double.isFinite(radius) || radius < 0) {
+            throw new IllegalArgumentException("Invalid radius");
+        }
         this.radius = radius;
     }
-
-    /** Return area */
-    public double getArea() {
-        return radius * radius * Math.PI;
+    public double getArea() { return Math.PI * radius * radius; }
+    public double getDiameter() { return 2 * radius; }
+    public double getCircumference() {
+        return 2 * Math.PI * radius;
     }
 
-    /** Return diameter */
-    public double getDiameter() {
-        return 2 * radius;
+    @Override public String toString() {
+        return super.toString() + ",radius=" + radius;
     }
-
-    /** Return perimeter */
-    public double getPerimeter() {
-        return 2 * radius * Math.PI;
-    }
-
-    /* Print the circle info */
-    public void printCircle() {
-        System.out.println("The circle is  " + super.toString() +
-                " and the radius is " + radius);
-    }
-
-    @Override
-    public String toString(){
-        return "The circle is: " + super.toString()  +
-                " and the radius is " + radius;
-    }
-
-
-
-
-
 }

@@ -1,60 +1,25 @@
-import java.util.*;
+/**
+ * COMP 110 - Chapter 11: Inheritance and Polymorphism
+ * Slides 9
+ * Assumptions: Finite nonnegative dimensions; ordinary magnitudes for finite computed area.
+ */
 public class Rectangle extends GeometricObject {
-    private double width;
-    private double height;
-
-    public Rectangle() {
-        super();
-    }
-
+    private final double width;
+    private final double height;
     public Rectangle(double width, double height) {
         super();
+        if (!Double.isFinite(width) || !Double.isFinite(height)
+                || width < 0 || height < 0) {
+            throw new IllegalArgumentException(
+        "Invalid dimensions");
+        }
         this.width = width;
         this.height = height;
     }
-
-    public Rectangle(double width, double height, String color, boolean filled) {
-        super();
-        this.width = width;
-        this.height = height;
-        super.setColor(color);
-        setFilled(filled);
+    public double getWidth() { return width; }
+    public double getHeight() { return height; }
+    public double getArea() { return width * height; }
+    @Override public String toString() {
+        return super.toString() + ",width=" + width + ",height=" + height;
     }
-
-    /** Return width */
-    public double getWidth() {
-        return width;
-    }
-
-    /** Set a new width */
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    /** Return height */
-    public double getHeight() {
-        return height;
-    }
-
-    /** Set a new height */
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    /** Return area */
-    public double getArea() {
-        return width * height;
-    }
-
-    /** Return perimeter */
-    public double getPerimeter() {
-        return 2 * (width + height);
-    }
-
-    @Override
-    public String toString(){
-        return "The rectangle is: " + super.toString()  +
-                " and the height is " + height + " and the width is " + width;
-    }
-
 }

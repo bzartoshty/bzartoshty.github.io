@@ -1,25 +1,16 @@
+/**
+ * COMP 110 - Chapter 11: Inheritance and Polymorphism
+ * Slides 31
+ */
 public class PolymorphismDemo {
-   /** Main method */
-   public static void main(String[] args) {
-      // Display circle and rectangle properties
-      GeometricObject c1 = new Circle(1,"red",false);
-      displayObject(c1);
-      displayObject(new Circle(1, "red", false));
-      displayObject(new Rectangle(1, 1, "black", true));
-   }
+    public static void show(Object value) {
+        System.out.println(value.toString());
+    }
 
-   /** Display geometric object properties */
-   public static void displayObject(GeometricObject object) {
-      System.out.println("Created on " + object.getDateCreated() +
-         " Color is " + object.getColor());
-   }
-   
-   /** Display geometric object properties */
-  /* public static void displayObject(Rectangle object) {
-      System.out.println("Created on " + object.getDateCreated() +
-         " Color is " + object.getColor());
-   }
-
-  */ 
-   
+    public static void main(String[] args) {
+        show(new Person("Ada"));
+        show(new Student("Bo"));
+        show(new GraduateStudent("Cy"));
+        show(new Circle(2));
+    }
 }

@@ -1,24 +1,20 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
+/**
+ * COMP 110 - Chapter 11: Inheritance and Polymorphism
+ * Slides 50
+ * Assumptions: Int tokens ending in 0; preserves first-seen order of distinct nonzero values; input fits available memory.
+ */
 public class DistinctNumbers {
-  public static void main(String[] args) {
-    ArrayList<Integer> list = new ArrayList<>();
-    
-    Scanner input = new Scanner(System.in);   
-    System.out.println("Enter integers (input ends with 0): ");
-    int value;
-    
-    do {
-      value = input.nextInt(); // Read a value from the input
-      
-      if (!list.contains(value) && value != 0) 
-        list.add(value); // Add the value if it is not in the list
-    } while (value != 0);
-
-    // Display the distinct numbers
-    System.out.print("The distinct integers are: ");
-    for (int i = 0; i < list.size(); i++) 
-      System.out.print(list.get(i) + " ");
-  }
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter ints; 0 ends:");
+        ArrayList<Integer> values = new ArrayList<>();
+        int value = input.nextInt();
+        while (value != 0) {
+            if (!values.contains(value)) values.add(value);
+            value = input.nextInt();
+        }
+        System.out.println(values);
+    }
 }
