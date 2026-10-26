@@ -259,6 +259,64 @@ public class BinarySearchTree<E extends Comparable<E>> implements Tree<E> {
          }
       }
    }
+   
+   /** Non recursive iterator 
+   @Override
+    public Iterator<E> iterator() {
+        return new InorderIterator();
+    }
+
+    private class InorderIterator implements Iterator<E> {
+        private final Deque<TreeNode<E>> stack = new ArrayDeque<>();
+        private E lastReturned;
+        private boolean canRemove;
+
+        InorderIterator() {
+            pushLeftPath(root);
+        }
+
+        private void pushLeftPath(TreeNode<E> node) {
+            while (node != null) {
+                stack.push(node);
+                node = node.left;
+            }
+        }
+
+        @Override
+        public boolean hasNext() {
+            return !stack.isEmpty();
+        }
+
+        @Override
+        public E next() {
+            if (!hasNext()) throw new NoSuchElementException();
+            TreeNode<E> node = stack.pop();
+            lastReturned = node.element;
+            pushLeftPath(node.right);
+            canRemove = true;
+            return lastReturned;
+        }
+
+        @Override
+        public void remove() {
+            if (!canRemove) throw new IllegalStateException();
+            BinarySearchTree.this.delete(lastReturned);
+            // Rebuild the path after deletion changes node values or structure.
+            stack.clear();
+            TreeNode<E> node = root;
+            while (node != null) {
+                if (lastReturned.compareTo(node.element) < 0) {
+                    stack.push(node);
+                    node = node.left;
+                } else {
+                    node = node.right;
+                }
+            }
+            canRemove = false;
+        }
+    }
+    */
+
 
 
       
