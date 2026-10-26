@@ -1,6 +1,6 @@
 public class TestBST {
-    public static BST<Integer> example() {
-        BST<Integer> tree = new BST<>();
+    public static BinarySearchTree<Integer> example() {
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
         for (int k : new int[]{12,5,15,2,9,20,7,10,17,30}) tree.insert(k);
         return tree;
     }

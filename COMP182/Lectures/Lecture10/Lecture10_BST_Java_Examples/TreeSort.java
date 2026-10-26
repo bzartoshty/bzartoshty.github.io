@@ -1,5 +1,5 @@
 import java.util.*;
-/** A counted-node tree retains duplicates; an ordinary BST set would lose them. */
+/** A counted-node tree retains duplicates; an ordinary BinarySearchTree set would lose them. */
 public class TreeSort {
     private static class CountNode {
         int key, count = 1; CountNode left, right;
