@@ -1,0 +1,270 @@
+:root {
+    --primary: #2563eb;
+    --secondary: #1d4ed8;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --text: #334155;
+    --card: #ffffff;
+    --border: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ===== Navigation ===== */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.dark-btn {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+}
+
+/* ===== Hero Section ===== */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #2563eb
+    );
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin: 5px;
+    transition: .3s;
+}
+
+.button-primary {
+    background: white;
+    color: var(--primary);
+}
+
+.button-primary:hover {
+    background: #e5e7eb;
+}
+
+.button-secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+.button-secondary:hover {
+    background: rgba(255,255,255,.15);
+}
+
+/* ===== Sections ===== */
+
+section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: var(--primary);
+    font-size: 2.2rem;
+}
+
+.center-text {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+/* ===== Cards ===== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(300px, 1fr)
+    );
+    gap: 25px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.05);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* ===== Contact ===== */
+
+.contact {
+    text-align: center;
+}
+
+.contact a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+/* ===== Dark Mode ===== */
+
+body.dark {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+body.dark nav {
+    background: #1e293b;
+}
+
+body.dark .nav-links a {
+    color: #e2e8f0;
+}
+
+body.dark .logo {
+    color: #60a5fa;
+}
+
+body.dark .card {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark .section-title h2 {
+    color: #60a5fa;
+}
+
+body.dark footer {
+    background: #020617;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.1rem;
+    }
+}
