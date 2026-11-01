@@ -1,447 +1,102 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-	<meta charset="utf-8"/>
-        <title>COMP 282-Advanced Data Structures</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-        <!-- Font Awesome Icons -->
-        <link rel="stylesheet" href="../css/font-awesome.min.css"/>
-
-        <!-- Bootstrap -->
-        <link href="../css/bootstrap.min.css" rel="stylesheet"/>
-        <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-         <script src="js/html5shiv.js"></script>
-         <script src="js/respond.min.js"></script>
-         <![endif]-->
-
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <!-- http://getbootstrap.com/customize/ change "@screen-sm" -> "@screen-md" in @grid-float-breakpoint -->
-        <script src="../js/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="../js/bootstrap.min.js"></script>
-        <script src="../js/menucollapse.js"></script>
-        <script type="text/javascript" src="../js/arrow78.js"></script>
-        <script type="text/javascript" src="../js/custom.js"></script>
-    <style>
-	  .table th {
-		   text-align: center;
-		}
-    </style>
-  </head>
-  <hr class="star-primary">
-  <body id="page-top" class="index">
-	<div class="container">
-		<h2><a href="https://catalog.csun.edu/academics/comp/courses/comp-282/" style="text-decoration: none">COMP 282 - Advanced Data Structures</h2>
-		 <!-- Home Section -->
-			<section  name="home" id="home" style="margin-top:10px">
-			<hr class="star-primary" style="margin-left:10px" width="80%">
-				<div align="left" class="col-md-5">
-					<h2>Resources</h2>
-					<ul>
-					<!--  <li><a href="syllubus/comp182-syllabi.pdf">Syllabus</a></li> -->
-					  <!-- <li><a href="resources/tutoring">Free Tutoring Schedule</a></li> -->
-					<li><a href="https://www.oracle.com/java/technologies/downloads/">Download JDK</a></li>
-					  <li><a  href="https://grasp.org">Download JGrasp IDE</a></li>
-					 <li><a href="https://www.jgrasp.org/tutorials187/02_Getting_Started.pdf">How to use JGrasp</a></li>
-					  <li><a href="https://www.jetbrains.com/idea/download/?section=windows">Download IntelliJ IDE</a></li>
-					  <li><a href="https://www.jetbrains.com/help/idea/getting-started.html#:~:text=First%20steps,Get%20support%20and%20assistance">How to use IntelliJ</a></li>	
-					<!--  <li><a href="https://netbeans.apache.org/">Download netbeans IDE </a></li> -->
-				     <!--   <li><a href="https://netbeans.apache.org/tutorial/main/kb/docs/java-se/">How to use netbeans</a></li> -->
-					</ul>
-				</div>
-
-				<div align="left" class="col-md-5">
-					<h2>Getting Help</h2>
-					<ul>
-					  <li>Email address: bzartoshty at csun dot edu</li>
-					  <li>
-						<h2>Office hours: </h2>
-						<ul>
-						
-						  <li>Check Syllabus on Canvas</li> 
-						</ul>
-					  
-					
-				</div>
-			</section>
-			<div class="row">
-			<div class="col-xs-10" id="todays-table">
-			    <hr class="star-primary">
-			    <h3>Course Materials</h3>
-				<table class="table table-striped" border="1">
-				 <thead>
-				  <tr>
-					<th align="center">Lecture</th>
-					<th colspan="2" align="center">Materials</th>
-				  </tr>
-				  </thead>
-				  <tr>
-					<td align="center">1</td>
-					<td>
-					  <ul>
-						<li><a href="Lectures/Lecture01/Lecture01_Review.pdf">Review of COMP 182</a> (pdf)</li>
-					<!--	  <li><a href="Lectures/Lecture1/Lecture01-Review.pptx">Review of COMP 110</a> (pptx)</li> -->
-					  </ul>
-					</td>
-			<td>
-
-					  <ul>
-						
-						<li><a href="Lectures/Lecture01/GenericStack.java"><code>GenericStack.java</code></a>, Generic Stack using ArrayList</li>
-						  <li><a href="Lectures/Lecture01/MyStack.java"><code>MyStack.java</code></a>, Generic Stack using LinkedList</li>
-						  <li><a href="Lectures/Lecture01/Postfix.java"><code>Postfix.java</code></a>, Infix to Postfix</li> 
-					<!--	  <li><a href="Lectures/Lecture1/ReadData.java"><code>ReadData.java</code></a>,File I/O</li>
-						  <li><a href="Lectures/Lecture1/WriteData.java"><code>WriteData.java</code></a>,File I/O</li>
-						  <li><a href="Lectures/Lecture1/WriteDataWithAutoClose.java"><code>WriteDataWithAutoClose.java</code></a>,File I/O with auto close</li>
-						  <li><a href="Lectures/Lecture1/ReplaceText.java"><code>ReplaceText.java.java</code></a>,File I/O - replace text from original file to source file</li>
-						   <li><a href="Lectures/Lecture1/ReplaceText2.java"><code>ReplaceText2.java.java</code></a>,File I/O - replace text in original file</li> -->
-					  </ul>
-					</td>
-				  </tr>
-
-				   <tr>
-					<td align="center">2</td>
-					<td>
-					  <ul>
-						<!--<li><a href="Lectures/Lecture02/Lecture02.pptx">Abstract/interface classes (pptx)</a></li> -->
-						  <li><a href="Lectures/Lecture02/Lecture02_BinarySearchTree.pdf">Binary Search Tree(pdf)</a></li>
-						
-					  </ul>
-					</td>
-
-					<td>
-					  <ul>
-					<!--	<li><a href="Lectures/Lecture02/Tree.java"><code>Tree.java</code></a></li>
-						<li><a href="Lectures/Lecture02/TreeNode.java"><code>TreeNode.java</code></a></li> -->
-						<li><a href="Lectures/Lecture02/BinarySearchTree.java"><code>BinarySearchTree.java</code></a></li> 
-					<!--	<li><a href="Lectures/Lecture02/Main.java"><code>Main.java</code></a></li> -->
-					<!--	 <li><a href="Lectures/Lecture2/ComparableRectangle.java"><code>ComparableRectangle.java</code></a></li>
-						  <li><a href="Lectures/Lecture2/SortRectangles.java"><code>SortRectangles.java</code></a></li>
-						  <li><a href="Lectures/Lecture2/TestGeometricObject.java"><code>TestGeometricObject.java</code></a></li> -->
-					  </ul>
-						
-					</td>
-				  </tr>
-
-			   <tr>
-					<td align="center">3</td>
-					<td>
-					  <ul>
-						<li><a href="Lectures/Lecture03/Lecture03_RedBlackTree.pdf">Red Black Tree (pdf)</a></li>
-					<!--	<li><a href="Lectures/Lecture3/Recursion.pdf">Recursion (pdf)</a></li> -->
-						
-					  </ul>
-					</td>
-					<td>
-					  <ul>
-			<li><a href="Lectures/Lecture03/RBTree.java"><code>RBTreeh.java</code></a></li>
-			<li><a href="Lectures/Lecture03/TestRBTree.java"><code>TestRBTree.java</code></a></li>
-		<!--	<li><a href="Lectures/Lecture3/ReversePrint.java"><code>ReversePrint.java</code></a></li>
-			<li><a href="Lectures/Lecture3/TowerOfHanoi.java"><code>TowerOfHanoi.java</code></a></li>
-						
-					  </ul>
-						-->
-					  </ul>
-					</td>
-
-				  </tr>
-
-
-				  <tr>
-					<td align="center">4</td>
-					<td>
-					    <ul>
-					  <!--     <li><a href="Lectures/Lecture04/Lecture4-ADT.pptx">Abstract Data Types (PPT)</a></li> -->
-                                                 <li><a href="Lectures/Lecture04/Lecture04_AVLTree.pdf">AVL Tree (pdf)</a></li>
-    					    </ul>
-					</td>
-					<td>
-						<ul>
-               <li><a href="Lectures/Lecture04/AVLTree.java"><code>AVLTree.java</code></a></li>
-			 <li><a href="Lectures/Lecture04/TestAVLTree.java"><code>TestAVLTree.java</code></a></li>
-		<!--	 <li><a href="Lectures/Lecture4/TestForEach.java"><code>TestForEach.java</code></a></li>
-			 <li><a href="Lectures/Lecture4/TestIterator.java"><code>TestIterator.java</code></a></li>
-					</td> -->
-						</ul>
-				  </tr>
-
-
-          <tr>
-          <td align="center">5</td>
-          <td>
-            <ul>
-
-  <!--   <li><a href="Lectures/Lecture05/Tree24-LinkedList.pptx">MyLinkedList (PPT)</a></li> -->
-    <li><a href="Lectures/Lecture05/Lecture05_24_Tree.pdf">24 Tree (pdf)</a></li>
-         
-              </ul>
-            
-          </td>
-          <td>
-          <ul>
-          <li><a href="Lectures/Lecture05/Tree24.java"><code>Treet2.java</code></a></li>
-	<li><a href="Lectures/Lecture05/TestTree24.java"><code>TestTree24.java</code></a></li>
-<!--	<li><a href="Lectures/Lecture5/TestMyLinkedList.java"><code>TestMyLinkedList.java</code></a></li> -->
-	
-          </ul>
-          </td>
-          </tr>
-
-	<tr>
-	<td align="center">6</td>
-
-	<td>
-	<ul>
-	<!--   <li><a href="Lectures/Lecture6/Lecture06.pptx">Algoritmh Efficiency(PPT)</a></li> -->
-    <li><a href="Lectures/Lecture06/Lecture06_PQ.pdf">Priority Queue (pdf)</a></li>
-						
-					  </ul>
-					</td>
-          <td>
-            <ul>
-	   <li><a href="Lectures/Lecture06/MaxHeap.java"><code>MaxHeap.java</code></a></li>
-	<li><a href="Lectures/Lecture06/MinHeap.java"><code>MinHeap.java</code></a></li>
-            <li><a href="Lectures/Lecture06/MaxPriorityQueue.java"><code>MaxPriorityQueue.java</code></a></li>
-	<li><a href="Lectures/Lecture06/MinPriorityQueue.java"><code>MinPriorityQueue.java</code></a></li>
-	   <li><a href="Lectures/Lecture06/TestPQ.java"><code>TestPQ.java</code></a></li>
-	<li><a href="Lectures/Lecture06/HeapSort.java"><code>HeapSort.java</code></a></li>
-	<li><a href="Lectures/Lecture06/HeapSort2.java"><code>HeapSort2.java</code></a></li>
-            </ul>
-          </td>
-          <td>
-				  </tr>
-
-
-          <tr>
-          <td align="center">7</td>
-          <td>
-	<ul>
-<!--	 <li><a href="Lectures/Lecture7/Lecture07-Sorting.ppt">Sort Algorithms (PPT)</a></li> -->
-    <li><a href="Lectures/Lecture07/Lecture07_Hashing.pdf">Hashing (pdf)</a></li>
-          </ul>
-        </td>
-        <td>
-   <!--       <ul>
-
-            <li><a href="Lectures/Lecture7/InsertionSort.java"><code>InsertionSort.java</code></a></li>
-	   <li><a href="Lectures/Lecture7/BubbleSort.java"><code>BubbleSort.java</code></a></li>
-	   <li><a href="Lectures/Lecture7/SelectionSort.java"><code>SelectionSort.java</code></a></li>
-	   <li><a href="Lectures/Lecture7/MergeSort.java"><code>MergeSort.java</code></a></li>
-	   <li><a href="Lectures/Lecture7/QuickSort.java"><code>QuickSort.java</code></a></li>
-	   <li><a href="Lectures/Lecture7/Sort.java"><code>Sort.java</code></a></li>
-		<li><a href="Lectures/Lecture7/RadixSort.java"><code>RadixSort.java</code></a></li>	  
-            </ul>
-			-->
-          </td>
-          </tr>
-
-
-
-<!--
-				  <tr>
-					<td></td>
-
-          <td align="center">Midterm Exam</td>
-          <td>
-            <ul>
-
-            <li><a href="StudyGuide/Midterm-StudyGuide.pdf">MidTerm Study Guide</a></li>
-	    </ul>
-           
-          </td>
-				  </tr>
--->
-          <tr>
-          <td align="center">8</td>
-
-
-            <td>
-              <ul>
-          <!--    <li><a href="Lectures/Lecture8/Lecture-08-Stack.pptx">Stack ADT (PPT)</a></li> -->
-    <li><a href="Lectures/Lecture08/Lecture08_SetMap.pdf">Set and Map (pdf)</a></li>
-              </ul>
-              </td>
-              <td>
-
-                  <ul>
-                   <li><a href="Lectures/Lecture08/TestTreeSet.java"><code>TestTreeSet.java</code></a></li>
-	   <li><a href="Lectures/Lecture08/TestLinkedHashSet.java"><code>TestLinkedHashSet.java</code></a></li>
-	   <li><a href="Lectures/Lecture08/TestHashSet.java"><code>TestHashSet.java</code></a></li>
-			 <li><a href="Lectures/Lecture08/CountKeywords.java"><code>CountKeyWords.java</code></a></li>
-		 <li><a href="Lectures/Lecture08/CountOccurrenceOfWords.java"><code>CountOccurrenceOfWords.java</code></a></li> 
-	   
-                  </ul>
-				  
-                </td>
-                  </tr>
-
-                  <tr>
-                  <td align="center">9</td>
-
-
-
-                    <td>
-                      <ul>
-                <!--         <li><a href="Lectures/Lecture9/Lecture09-Queue.pptx">Queue ADT (PPT)</a></li> -->
-           <li><a href="Lectures/Lecture09/Lecture09_Graphs_part1.pdf">Graph part 1 (pdf)</a></li>
-			 <li><a href="Lectures/Lecture09/Lecture09_Graphs_part2.pdf">Graph part 2 (pdf)</a></li>
-						   <li><a href="Lectures/Lecture09/Lecture09_Graphs_part3.pptx">Graph part 3 (ppt)</a></li>
-					<!--	   <li><a href="Lectures/Lecture09/Lecture09_Graphs_part4.pdf">Graph part 4 (pdf)</a></li> -->
-                       
-                      </ul>
-                    </td>
-                      
-                  
-                  <td>
-                    <ul>
-                     <li><a href="Lectures/Lecture09/TopologicalSort.java"><code>TopologicalSort.java</code></a></li>
-	   <li><a href="Lectures/Lecture09/TestTopologicalSort.java"><code>TestTopologicalSort.java</code></a></li>
-	<!--   <li><a href="Lectures/Lecture9/TestGenericQueue.java"><code>TestGenericQueue.java</code></a></li>
-                    </ul>
-      -->
-                  </td>
-                  </tr>
-
-                  <tr>
-                  <td align="center">10</td>
-
-
-                  <td>
-                    <ul>
-                    
-           <li><a href="Lectures/Lecture10/Intro_To_DB.pdf">Intoduction To DataBase (pdf)</a></li>
-		<li><a href="Lectures/Lecture10/Intro_To_SQL.pdf">Intoduction To SQL (pdf)</a></li>
-	<li><a href="Lectures/Lecture10/DB_FileSystem.pdf">Intoduction To File System (pdf)</a></li>
-                       
-                    </ul>
-                  </td>
-      <!--       <td>
-                    <ul>
-                     <li><a href="Lectures/Lecture10/BST.java"><code>BST.java</code></a></li>
-	   <li><a href="Lectures/Lecture10/TestBST.java"><code>TestBST.java</code></a></li>
-	  
-                    </ul>
-
-                  </td>
-
-                    </tr>
-
-                  <tr>
-                  <tr>
-	 <td align="center">11</td>
-
-
-                  <td>
-                    <ul>
-                    <li><a href="Lectures/LectureBinaryIO/LectureBinary_IO.pptx">Binary I/O (PPT)</a></li>
-          
-                       
-                    </ul>
-                  </td>
-             <td>
-                    <ul>
-                     <li><a href="Lectures/LectureBinaryIO/Copy.java"><code>Copy.java</code></a></li>
-			<li><a href="Lectures/LectureBinaryIO/Copy2.java"><code>Copy2.java</code></a></li>
-			  <li><a href="Lectures/LectureBinaryIO/TestDataFileStream.java"><code>TestDataFileStream.java</code></a></li>
-		<li><a href="Lectures/LectureBinaryIO/TestFileStream.java"><code>TestFileStream.java</code></a></li>
-	  <li><a href="Lectures/LectureBinaryIO/TestDataFileStream.java"><code>TestDataFileStream.java</code></a></li>
-	<li><a href="Lectures/LectureBinaryIO/TestObjectInputStream.java"><code>TestObjectInputStream.java</code></a></li>
-	<li><a href="Lectures/LectureBinaryIO/TestObjectOutputStream.java"><code>TestObjectotputStream.java</code></a></li>
-	  
-                    </ul>
-
-                  </td>
-
-                    </tr>
-
-                  <tr>
-                  <tr>
-
-
-                 <td align="center">12</td>
-<td>
-  <ul>
-  <li><a href="Lectures/Lecture11/Lecture11-PQ.pptx">Priority Queue (PPT)</a></li>
-           <li><a href="Lectures/Lecture11/Lecture11-PQ.pdf">Priority Queue (pdf)</a></li>
-  </ul>
-</td>
-<td>
-            <ul>
-	   <li><a href="Lectures/Lecture11/MaxHeap.java"><code>MaxHeap.java</code></a></li>
-	<li><a href="Lectures/Lecture11/MinHeap.java"><code>MinHeap.java</code></a></li>
-            <li><a href="Lectures/Lecture11/MaxPriorityQueue.java"><code>MaxPriorityQueue.java</code></a></li>
-	<li><a href="Lectures/Lecture11/MinPriorityQueue.java"><code>MinPriorityQueue.java</code></a></li>
-	   <li><a href="Lectures/Lecture11/TestPQ.java"><code>TestPQ.java</code></a></li>
-	<li><a href="Lectures/Lecture11/HeapSort.java"><code>HeapSort.java</code></a></li>
-	<li><a href="Lectures/Lecture11/HeapSort2.java"><code>HeapSort2.java</code></a></li>
-            </ul>
-          </td>
-
-
-          </tr>
-
-				  <tr>
-					<td align="center">13</td>
-          <td>
-					  <ul>
-		<li><a href="Lectures/Lecture12/Lecture12-Hashing.pptx">Hashing (PPT)</a></li>
-           <li><a href="Lectures/Lecture12/Lecture12-Hashing.pdf">Hashing (pdf)</a></li>
-					  </ul>
-            <td>
-  					 
-					</td>
-				  </tr>
-
-
-          <tr>
-         <td align="center">14</td>
-         <td>
-           <ul>
-            <li><a href="Lectures/Lecture13/Lecture_SetMap.pptx">Set and Map ADT (PPT)</a></li>
-           <li><a href="Lectures/Lecture13/Lecture_SetMap.pdf">Set and Map ADT  (pdf)</a></li>
-           </ul>
-         </td>
-         <td>
-           <ul>
-	   <li><a href="Lectures/Lecture13/MySet.java"><code>MySet.java</code></a></li>
-	  <li><a href="Lectures/Lecture13/MyHashSet.java"><code>MyHashSet.java</code></a></li>
-	   <li><a href="Lectures/Lecture13/TestMyHashSet.java"><code>TestMyHashSet.java</code></a></li>
-	   
-            <li><a href="Lectures/Lecture13/TestHashSet.java"><code>TestHashSet.java</code></a></li>
-	  <li><a href="Lectures/Lecture13/TestLinkedHashSet.java"><code>TestLinkedHashSet.java</code></a></li>
-	 <li><a href="Lectures/Lecture13/TestTreeSet.java"><code>TestTreeSet.java</code></a></li>
-		   <li><a href="Lectures/Lecture13/MyMap.java"><code>MyMap.java</code></a></li>
-	  <li><a href="Lectures/Lecture13/MyHashMap.java"><code>MyHashMap.java</code></a></li>
-	   <li><a href="Lectures/Lecture13/TestMyHashMap.java"><code>TestMyHashMap.java</code></a></li>
-	  <li><a href="Lectures/Lecture13/TestMap.java"><code>TestMap.java</code></a></li>
-	<li><a href="Lectures/Lecture13/CountKeywords.java"><code>CountKeywords.java</code></a></li>
-	<li><a href="Lectures/Lecture13/CountOccurrenceOfWords.java"><code>CountOccurrenceOfWords.java</code></a></li>	   
-           </ul>
-
-         </td>
-         <tr>
-					<td></td>
-
-          <td align="center">Final Exam</td>
-          <td>
-            <ul>
-
-            <li><a href="StudyGuide/Final-StudyGuide.pdf">Final Study Guide</a></li>
-	    </ul>
-           
-          </td>
-				  </tr>
-					-->
-				</table>
-			</div>
-		</div>
-	</div>
-  <hr class="star-primary">
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lecture slides and Java examples for COMP 282: Advanced Data Structures.">
+  <title>COMP 282: Advanced Data Structures</title>
+  <link rel="stylesheet" href="course.css">
+</head>
+<body>
+  <a class="skip-link" href="#materials">Skip to course materials</a>
+  <header>
+    <nav aria-label="Site navigation"><a href="../index.html">All courses</a></nav>
+    <h1>COMP 282</h1>
+    <p class="subtitle">Advanced Data Structures</p>
+    <p><a href="https://catalog.csun.edu/academics/comp/courses/comp-282/">Course catalog</a></p>
+  </header>
+  <main>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Resources</h2>
+      <ul class="resources">
+        <li><a href="https://www.oracle.com/java/technologies/downloads/">Download JDK</a></li>
+        <li><a href="https://jgrasp.org">Download jGRASP IDE</a></li>
+        <li><a href="https://www.jgrasp.org/tutorials187/02_Getting_Started.pdf">Getting started with jGRASP</a></li>
+        <li><a href="https://www.jetbrains.com/idea/download/?section=windows">Download IntelliJ IDEA</a></li>
+        <li><a href="https://www.jetbrains.com/help/idea/getting-started.html">Getting started with IntelliJ IDEA</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="help-heading">
+      <h2 id="help-heading">Getting help</h2>
+      <p>Email: <a href="mailto:bzartoshty@csun.edu">bzartoshty@csun.edu</a></p>
+      <p>Office hours: check the syllabus on Canvas.</p>
+    </section>
+    <section id="materials" aria-labelledby="materials-heading" tabindex="-1">
+      <h2 id="materials-heading">Course materials</h2>
+      <p>Lectures appear in teaching order. Choose PDF for reading or printing.</p>
+      <div class="table-scroll" role="region" aria-label="Lecture materials" tabindex="0">
+      <table>
+        <caption>Lecture slides and Java examples</caption>
+        <thead><tr><th scope="col">Lecture</th><th scope="col">Topic</th><th scope="col">Slides</th><th scope="col">Java examples</th></tr></thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Review of COMP 182</td>
+          <td class="downloads"><a href="Lectures/Lecture01/Lecture01_Review.pdf">PDF</a></td>
+          <td><ul class="examples"><li><a href="Lectures/Lecture01/GenericStack.java">GenericStack.java</a></li><li><a href="Lectures/Lecture01/MyStack.java">MyStack.java</a></li><li><a href="Lectures/Lecture01/Postfix.java">Postfix.java</a></li></ul></td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Binary search trees</td>
+          <td class="downloads"><a href="Lectures/Lecture02/BinarySearchTree.pdf">PDF</a></td>
+          <td><ul class="examples"><li><a href="Lectures/Lecture02/Lecture10_BST_Java_Examples/BSTPractice.java">BSTPractice.java</a></li><li><a href="Lectures/Lecture02/Lecture10_BST_Java_Examples/BinarySearchTree.java">BinarySearchTree.java</a></li><li><a href="Lectures/Lecture02/Lecture10_BST_Java_Examples/DeletionDemo.java">DeletionDemo.java</a></li><li><a href="Lectures/Lecture02/Lecture10_BST_Java_Examples/HeightDemo.java">HeightDemo.java</a></li><li><a href="Lectures/Lecture02/Lecture10_BST_Java_Examples/InsertionDemo.java">InsertionDemo.java</a></li><li><a href="Lectures/Lecture02/Lecture10_BST_Java_Examples/IteratorDemo.java">IteratorDemo.java</a></li><li><a href="Lectures/Lecture02/Lecture10_BST_Java_Examples/Node.java">Node.java</a></li><li><a href="Lectures/Lecture02/Lecture10_BST_Java_Examples/OrderingEqualityDemo.java">OrderingEqualityDemo.java</a></li><li><a href="Lectures/Lecture02/Lecture10_BST_Java_Examples/SearchDemo.java">SearchDemo.java</a></li><li><a href="Lectures/Lecture02/Lecture10_BST_Java_Examples/TestBST.java">TestBST.java</a></li><li><a href="Lectures/Lecture02/Lecture10_BST_Java_Examples/TraversalDemo.java">TraversalDemo.java</a></li><li><a href="Lectures/Lecture02/Lecture10_BST_Java_Examples/Tree.java">Tree.java</a></li><li><a href="Lectures/Lecture02/Lecture10_BST_Java_Examples/TreeSort.java">TreeSort.java</a></li></ul></td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Red black trees</td>
+          <td class="downloads"><a href="Lectures/Lecture03/Lecture03_RedBlackTree.pdf">PDF</a></td>
+          <td><ul class="examples"><li><a href="Lectures/Lecture03/RBTree.java">RBTree.java</a></li><li><a href="Lectures/Lecture03/TestRBTree.java">TestRBTree.java</a></li></ul></td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>AVL trees</td>
+          <td class="downloads"><a href="Lectures/Lecture04/Lecture04_AVLTree.pdf">PDF</a></td>
+          <td><ul class="examples"><li><a href="Lectures/Lecture04/AVLTree.java">AVLTree.java</a></li><li><a href="Lectures/Lecture04/TestAVLTree.java">TestAVLTree.java</a></li></ul></td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>2-4 trees</td>
+          <td class="downloads"><a href="Lectures/Lecture05/Lecture05_24_Tree.pdf">PDF</a></td>
+          <td><ul class="examples"><li><a href="Lectures/Lecture05/Tree24.java">Tree24.java</a></li><li><a href="Lectures/Lecture05/TestTree24.java">TestTree24.java</a></li></ul></td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>Priority queues</td>
+          <td class="downloads"><a href="Lectures/Lecture06/Lecture06_PQ.pdf">PDF</a></td>
+          <td><ul class="examples"><li><a href="Lectures/Lecture06/MaxHeap.java">MaxHeap.java</a></li><li><a href="Lectures/Lecture06/MinHeap.java">MinHeap.java</a></li><li><a href="Lectures/Lecture06/MaxPriorityQueue.java">MaxPriorityQueue.java</a></li><li><a href="Lectures/Lecture06/MinPriorityQueue.java">MinPriorityQueue.java</a></li><li><a href="Lectures/Lecture06/TestPQ.java">TestPQ.java</a></li><li><a href="Lectures/Lecture06/HeapSort.java">HeapSort.java</a></li><li><a href="Lectures/Lecture06/HeapSort2.java">HeapSort2.java</a></li></ul></td>
+        </tr>
+        <tr>
+          <th scope="row">7</th>
+          <td>Hashing</td>
+          <td class="downloads"><a href="Lectures/Lecture07/Lecture12-Hashing.pdf">PDF</a></td>
+          <td><ul class="examples"><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/ChainingDemo.java">ChainingDemo.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/DoubleHashingDemo.java">DoubleHashingDemo.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/HashAnalysisExamples.java">HashAnalysisExamples.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/HashCodeExamples.java">HashCodeExamples.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/HashMixingExamples.java">HashMixingExamples.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/JavaHashMapDemo.java">JavaHashMapDemo.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/LinearProbingDemo.java">LinearProbingDemo.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/LinearProbingMap.java">LinearProbingMap.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/MyHashMap.java">MyHashMap.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/MyHashSet.java">MyHashSet.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/MyHashSetDemo.java">MyHashSetDemo.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/PersonKey.java">PersonKey.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/PersonKeyDemo.java">PersonKeyDemo.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/ProbeTable.java">ProbeTable.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/ProbingPractice.java">ProbingPractice.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/QuadraticProbingDemo.java">QuadraticProbingDemo.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/RehashingDemo.java">RehashingDemo.java</a></li><li><a href="Lectures/Lecture07/Lecture12_Hashing_Java_Examples/TombstoneMapDemo.java">TombstoneMapDemo.java</a></li></ul></td>
+        </tr>
+        <tr>
+          <th scope="row">8</th>
+          <td>Set and Map ADTs</td>
+          <td class="downloads"><a href="Lectures/Lecture08/Lecture_SetMap.pdf">PDF</a></td>
+          <td><ul class="examples"><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/CountKeywords.java">CountKeywords.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/CountOccurrenceOfWords.java">CountOccurrenceOfWords.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/EqualityDemo.java">EqualityDemo.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/MapViewsDemo.java">MapViewsDemo.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/MultimapDemo.java">MultimapDemo.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/MyHashMap.java">MyHashMap.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/MyHashSet.java">MyHashSet.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/MyMap.java">MyMap.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/MySet.java">MySet.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/NullAndFactoriesDemo.java">NullAndFactoriesDemo.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/SetMembershipQuiz.java">SetMembershipQuiz.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/SetOperations.java">SetOperations.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/StudentKey.java">StudentKey.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/TestHashSet.java">TestHashSet.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/TestLinkedHashSet.java">TestLinkedHashSet.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/TestMap.java">TestMap.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/TestMyHashMap.java">TestMyHashMap.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/TestMyHashSet.java">TestMyHashSet.java</a></li><li><a href="Lectures/Lecture08/Lecture13_SetMap_Java_Examples/TestTreeSet.java">TestTreeSet.java</a></li></ul></td>
+        </tr>
+        <tr>
+          <th scope="row">9</th>
+          <td>Graphs</td>
+          <td class="downloads"><a href="Lectures/Lecture09/Lecture09_Graphs_part1.pdf">Lecture09_Graphs_part1 PDF</a><a href="Lectures/Lecture09/Lecture09_Graphs_part2.pdf">Lecture09_Graphs_part2 PDF</a><a href="Lectures/Lecture09/Lecture09_Graphs_part3.pptx">Lecture09_Graphs_part3 PowerPoint</a></td>
+          <td><ul class="examples"><li><a href="Lectures/Lecture09/TopologicalSort.java">TopologicalSort.java</a></li><li><a href="Lectures/Lecture09/TestTopologicalSort.java">TestTopologicalSort.java</a></li></ul></td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+  </main>
+</body>
 </html>
