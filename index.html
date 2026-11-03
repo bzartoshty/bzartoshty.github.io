@@ -8,6 +8,8 @@
   <title>Bahram Zartoshty | Computer Science Lecturer</title>
   <link rel="stylesheet" href="css/home.css">
   <script src="js/home.js" defer></script>
+  <link rel="stylesheet" href="css/visit-stats.css">
+  <script src="js/visit-stats.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -79,6 +81,19 @@
     </div>
   </main>
   <footer class="site-footer">
+  <div class="container">
+    <section class="visit-stats" data-visit-stats data-current-page="home" aria-labelledby="visit-stats-heading">
+      <h2 id="visit-stats-heading">Visit statistics</h2>
+      <dl>
+        <div><dt><a href="index.html">Home</a></dt><dd data-visit-count="home" aria-live="polite">Loading…</dd></div>
+        <div><dt><a href="COMP110/index.html">COMP 110</a></dt><dd data-visit-count="comp110" aria-live="polite">Loading…</dd></div>
+        <div><dt><a href="COMP182/index.html">COMP 182</a></dt><dd data-visit-count="comp182" aria-live="polite">Loading…</dd></div>
+        <div><dt><a href="COMP282/index.html">COMP 282</a></dt><dd data-visit-count="comp282" aria-live="polite">Loading…</dd></div>
+      </dl>
+      <p class="visit-note">Page visits since November 2, 2026; repeat visits are included. Counts are approximate.</p>
+      <noscript><p class="visit-note">Enable JavaScript to view visit statistics.</p></noscript>
+    </section>
+  </div>
     <div class="container footer-inner">
       <p>© <span id="year">2026</span> Bahram Zartoshty</p>
     </div>

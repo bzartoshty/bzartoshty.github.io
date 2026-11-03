@@ -1,0 +1,11 @@
+.visit-stats { padding: 28px 0; color: var(--ink, #172d44); font: 1rem/1.6 "Segoe UI", Arial, sans-serif; }
+.visit-stats h2 { margin: 0 0 14px; font-size: 1.1rem; letter-spacing: normal; }
+.visit-stats dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0; }
+.visit-stats dl > div { padding: 14px 18px; border: 1px solid var(--border, #d8e1ed); border-radius: 6px; background: var(--surface, #f4f7fb); }
+.visit-stats dt { font-size: .85rem; font-weight: 600; }
+.visit-stats dd { margin: 4px 0 0; font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.visit-stats a { color: var(--accent, #174fb5); }
+.visit-stats .visit-note { color: var(--muted, #526278); font-size: .8rem; margin: 12px 0 0; }
+.course-footer { margin-top: 40px; border-top: 1px solid #d8e1ed; }
+@media (max-width: 600px) { .visit-stats dl { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media print { .visit-stats { display: none; } }
