@@ -118,7 +118,7 @@ public class BST<E extends Comparable<E>> implements Iterable<E> {
         return new TreeNode<>(e);
     }
 
-    /** Return the height of this binary tree */
+    /** Return occupied levels: empty tree 0, leaf 1. */
     public int height() {
 
         return height(root);
@@ -136,8 +136,19 @@ public class BST<E extends Comparable<E>> implements Iterable<E> {
     }
 
     public int getHeight(TreeNode<E> root) {
-        // left as ecercise
-        int height=0;
+        if (root == null) return 0;
+        Queue<TreeNode<E>> queue = new ArrayDeque<>();
+        queue.add(root);
+        int height = 0;
+        while (!queue.isEmpty()) {
+            int width = queue.size();
+            for (int i = 0; i < width; i++) {
+                TreeNode<E> node = queue.remove();
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
+            }
+            height++;
+        }
         return height;
     }
 

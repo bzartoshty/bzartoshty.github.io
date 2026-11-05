@@ -1,0 +1,12 @@
+empty height: 0
+leaf height: 1
+traversal example height: 4
+7-node chain height: 7
+7-node perfect tree height: 3
+sorted height: 31
+shuffled height: 8
+31 nodes: 5 to 31 height
+height 4: 4 levels, maximum nodes: 15
+height 8: maximum nodes: 255
+2011 nodes: 11 to 2011 height
+height 10: 1 to 512 leaves

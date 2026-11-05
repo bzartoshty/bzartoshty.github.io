@@ -80,6 +80,11 @@ public class BinarySearchTree<E extends Comparable<E>> implements Tree<E> {
    }
 
 
+   /**
+    * Returns occupied levels: an empty tree has height 0 and a leaf has height 1.
+    * For a nonempty tree, height = maximum edge depth + 1.
+    * O(n) time and O(h) stack space for a nonempty tree.
+    */
    public int height() {
       return height(root);
    }
