@@ -15,6 +15,8 @@ public class PersonKeyDemo {
         System.out.println(a.equals(b));
         System.out.println(a.hashCode() == b.hashCode());
         System.out.println(map.get(b));
+        System.out.println("FB".hashCode());
+         System.out.println("Ea".hashCode());
         System.out.println("FB".hashCode() == "Ea".hashCode());
         System.out.println("FB".equals("Ea"));
     }

@@ -12,12 +12,14 @@ import java.util.TreeMap;
 public final class ProbeTable {
     public enum Mode { LINEAR, QUADRATIC, DOUBLE_PRIME, DOUBLE_LEGACY }
     public record Result(boolean inserted, int index, List<Integer> probes) { }
+    
     private static final byte EMPTY=0, LIVE=1, DELETED=2;
     private final Integer[] keys;
     private final byte[] state;
     private final Mode mode;
     private final int q;
     private int size;
+    // q is the prime number used in double hashing
     public ProbeTable(int capacity, Mode mode, int q) {
         if (capacity < 1) throw new IllegalArgumentException("capacity");
         this.mode = Objects.requireNonNull(mode);

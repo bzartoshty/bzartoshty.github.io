@@ -42,7 +42,7 @@ Slides 9, 13: PersonKeyDemo.java (run this class)
 Slides 5, 6, 41: JavaHashMapDemo.java (run this class)
 Slides 16, 19, 20, 25, 28, 30: ProbeTable.java (supporting class)
 Slides 17, 18, 19: LinearProbingDemo.java (run this class)
-Slides 21, 22, 23, 24: ProbingPractice.java (run this class)
+Slides 21, 22: ProbingPractice.java (linear probing only; run this class)
 Slides 25, 26, 27: QuadraticProbingDemo.java (run this class)
 Slides 28, 29, 30: DoubleHashingDemo.java (run this class)
 Slides 31, 32, 34, 35, 42: MyHashMap.java (supporting class)
@@ -54,3 +54,15 @@ Slides 19, 20, 35: LinearProbingMap.java (supporting class)
 Slides 19, 20, 35: TombstoneMapDemo.java (run this class)
 Slides 33, 36, 38: HashAnalysisExamples.java (run this class)
 Slides 39, 40: HashMixingExamples.java (run this class)
+
+Slide 27: QuadraticProbingPractice.java (quadratic probing only).
+Compile: javac -d classes *.java
+Run: java -cp classes QuadraticProbingPractice
+
+Double-hashing practice answer: DoubleHashingPractice.java (double hashing only).
+Compile: javac -d classes *.java
+Run: java -cp classes DoubleHashingPractice
+
+Slide labeled 31, full-coverage double hashing: FullCoverageDoubleHashingDemo.java.
+Compile: javac -d classes *.java
+Run: java -cp classes FullCoverageDoubleHashingDemo
